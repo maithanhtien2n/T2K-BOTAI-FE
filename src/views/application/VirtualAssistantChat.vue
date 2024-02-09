@@ -4,7 +4,7 @@ import UserChat from "./components/UserChat.vue";
 import { useRoute, useRouter } from "vue-router";
 import ButtonBack from "./components/ButtonBack.vue";
 import { STORE_VIRTUAL_ASSISTANT } from "@/services/stores";
-import { userData, accessToken, isMobileScreen } from "@/utils";
+import { userData, isMobileScreen } from "@/utils";
 
 const ROUTE = useRoute();
 const ROUTER = useRouter();
@@ -95,7 +95,7 @@ onMounted(async () => {
 
 <template>
   <div class="flex flex-column h-full">
-    <ButtonBack :accessToken="accessToken" @onBack="onClickButtonBack" />
+    <ButtonBack @onBack="onClickButtonBack" />
 
     <div
       style="max-width: 52rem"

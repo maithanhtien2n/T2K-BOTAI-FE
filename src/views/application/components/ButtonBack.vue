@@ -1,9 +1,7 @@
 <script setup>
-const emits = defineEmits(["onBack", "onNewChat"]);
+import { accessToken } from "@/utils";
 
-const props = defineProps({
-  accessToken: { type: String, required: false, default: "" },
-});
+const emits = defineEmits(["onBack", "onNewChat"]);
 </script>
 
 <template>
