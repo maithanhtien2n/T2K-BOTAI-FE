@@ -79,7 +79,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <ButtonBack @onClick="ROUTER.replace({ name: 'VirtualAssistant' })" />
+  <ButtonBack @onBack="ROUTER.replace({ name: 'VirtualAssistant' })" />
 
   <div style="max-width: 52rem" class="m-auto pt-3">
     <div class="flex flex-column gap-2 align-items-center">

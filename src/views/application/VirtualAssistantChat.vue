@@ -95,7 +95,7 @@ onMounted(async () => {
 
 <template>
   <div class="flex flex-column h-full">
-    <ButtonBack v-if="accessToken" @onClick="onClickButtonBack" />
+    <ButtonBack :accessToken="accessToken" @onBack="onClickButtonBack" />
 
     <div
       style="max-width: 52rem"

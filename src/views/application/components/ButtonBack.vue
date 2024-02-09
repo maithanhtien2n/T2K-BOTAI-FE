@@ -1,5 +1,9 @@
 <script setup>
-const emits = defineEmits(["onClick"]);
+const emits = defineEmits(["onBack", "onNewChat"]);
+
+const props = defineProps({
+  accessToken: { type: String, required: false, default: "" },
+});
 </script>
 
 <template>
@@ -11,11 +15,25 @@ const emits = defineEmits(["onClick"]);
     >
       <div
         style="background-color: rgb(255, 255, 255)"
-        class="flex align-items-center gap-1 on-click px-3 py-2 border-round-3xl"
-        @click="emits('onClick')"
+        class="px-3 py-2 border-round-3xl"
       >
-        <i class="pi pi-angle-left" />
-        <span>Trở lại</span>
+        <div
+          v-if="accessToken"
+          class="flex align-items-center gap-1 on-click"
+          @click="emits('onBack')"
+        >
+          <i class="pi pi-angle-left" />
+          <span>Trở lại</span>
+        </div>
+
+        <div
+          v-else
+          class="flex align-items-center gap-1 on-click"
+          @click="emits('onNewChat')"
+        >
+          <!-- <i class="pi pi-plus-circle" /> -->
+          <span>Trợ lý ảo</span>
+        </div>
       </div>
 
       <div>Chatbot 1.0</div>

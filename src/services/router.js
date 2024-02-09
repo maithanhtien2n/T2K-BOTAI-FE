@@ -57,7 +57,7 @@ router.beforeEach(async (to, from, next) => {
         to.name !== "Register" &&
         to.name !== "Home" &&
         to.name !== "NotFound" &&
-        t.name !== "VirtualAssistantChat"
+        to.name !== "VirtualAssistantChat"
       ) {
         return next({ name: "Login" });
       }
