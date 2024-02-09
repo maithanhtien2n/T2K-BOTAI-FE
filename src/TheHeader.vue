@@ -54,7 +54,7 @@ watchEffect(() => {
         background-size: cover;
       "
       :class="{ 'py-6': ROUTE.name === 'Home' }"
-      class="w-full p-3 flex align-items-center"
+      class="w-full p-3 flex align-items-center justify-content-between"
     >
       <div v-if="accessToken" class="flex flex-column gap-4">
         <div class="flex gap-2">
@@ -67,7 +67,7 @@ watchEffect(() => {
 
           <Avatar
             v-else
-            :label="userData.email.charAt(0).toUpperCase()"
+            :label="userData.email?.charAt(0)?.toUpperCase()"
             shape="circle"
           />
 
@@ -106,6 +106,15 @@ watchEffect(() => {
         <div style="max-width: 12rem" class="text-custom-mini line-height-3">
           Đăng nhập vào hệ thống để trải nghiệm dịch vụ tốt nhất!
         </div>
+      </div>
+
+      <div
+        v-if="ROUTE.name === 'Personal'"
+        style="color: rgb(216, 64, 64)"
+        class="on-click"
+        @click="onClickLogout"
+      >
+        Đăng xuất
       </div>
     </div>
   </div>
